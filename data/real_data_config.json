@@ -1,0 +1,13 @@
+{
+  "qc": {
+    "min_umi": 500,
+    "min_genes": 200
+  },
+  "signatures": {
+    "t_cell": ["PTPRC", "CD3E", "CD8A", "GZMB"]
+  },
+  "spatial_qc": {
+    "k": 30,
+    "z_threshold": 3.0
+  }
+}

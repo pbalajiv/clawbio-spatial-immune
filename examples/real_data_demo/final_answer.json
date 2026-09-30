@@ -1,0 +1,13 @@
+{
+  "immune_phenotype": "excluded",
+  "biomarker_pattern": "homogeneous",
+  "biomarker_gene": "ERBB2",
+  "sample_subtype": "unknown",
+  "subtype_mismatch_acknowledged": true,
+  "citations": ["REF-001", "REF-005"],
+  "dropped_cells_reported": 3417,
+  "caveat": "This is pattern classification of one tissue section against known categories, not a validated per-patient prediction of treatment response or outcome. ERBB2 transcript pattern is not equivalent to a clinical HER2 IHC/ISH score; sample_subtype is 'unknown' because this dataset's HER2 receptor status is undocumented. This sample is ductal carcinoma in situ (DCIS): an 'excluded' T-cell pattern may reflect anatomical duct/myoepithelial barriers rather than a biological immune-evasion mechanism, since most immune-phenotype literature describes invasive tumours (REF-001). REF-005 concerns DCIS specifically, not this sample's (unknown) receptor subtype -- that mismatch in the subtype tag is acknowledged; REF-005 is cited for its disease-stage relevance (DCIS immune microenvironment), not a receptor-subtype match.",
+  "abstention_reason": null,
+  "conclusion": "Immune-excluded tumour with spatially homogeneous ERBB2 expression among tumour cells.",
+  "narrative": "The section is classified as immune-excluded: among 35576 QC-passing cells (91.2% of 38993 input cells; 3417 dropped), T cells make up 9.7% of the population (3452 of 35576) and tumour cells 6187. Tumour-immune neighbourhood enrichment is z = -62.99 (p = 0.001, 1000 permutations), and T-cell density inside the 5890 tumour-region cells relative to the whole section gives infiltration_ratio = 0.049, both consistent with T cells being excluded from tumour regions rather than infiltrating them, per the inflamed/excluded/desert framework (REF-001). Because this sample is DCIS (in situ, not invasive), an intact myoepithelial layer may itself limit T-cell access to tumour cells, independent of any biological immune-evasion mechanism (REF-005). ERBB2 is spatially homogeneous among the same 6187 tumour cells: Moran's I = 0.403 (p = 0.001), depth-control Moran's I = 0.420, giving an excess of -0.017, below the heterogeneity threshold. ERBB2 was detected in 99.3% of tumour cells. Two warnings were raised: T-like cells adjacent to tumour are double-positive 29.65x as often as distant T-like cells (spillover_suspected), and log-depth Moran's I = 0.420 exceeds the depth-autocorrelation threshold (depth_autocorrelation), both of which should be weighed when interpreting these results."
+}

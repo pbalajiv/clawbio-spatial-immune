@@ -1,0 +1,9 @@
+{
+  "marker_concordance_spearman": {
+    "EPCAM": 0.81,
+    "KRT8": 0.77,
+    "CD8A": 0.64,
+    "PTPRC": 0.72
+  },
+  "concordance_ok": true
+}

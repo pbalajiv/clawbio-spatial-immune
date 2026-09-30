@@ -1,0 +1,50 @@
+{
+  "n_runs": 10,
+  "immune_phenotype": {
+    "mode": "excluded",
+    "agreement": 1.0,
+    "values": [
+      "excluded",
+      "excluded",
+      "excluded",
+      "excluded",
+      "excluded",
+      "excluded",
+      "excluded",
+      "excluded",
+      "excluded",
+      "excluded"
+    ]
+  },
+  "biomarker_pattern": {
+    "mode": "homogeneous",
+    "agreement": 1.0,
+    "values": [
+      "homogeneous",
+      "homogeneous",
+      "homogeneous",
+      "homogeneous",
+      "homogeneous",
+      "homogeneous",
+      "homogeneous",
+      "homogeneous",
+      "homogeneous",
+      "homogeneous"
+    ]
+  },
+  "faithfulness_pass_rate": 1.0,
+  "citation_jaccard_mean": 1.0,
+  "citation_jaccard_min": 1.0,
+  "per_run_status": [
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass",
+    "pass"
+  ]
+}

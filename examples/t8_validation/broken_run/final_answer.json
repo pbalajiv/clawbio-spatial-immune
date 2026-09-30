@@ -1,0 +1,16 @@
+{
+  "immune_phenotype": "inflamed",
+  "biomarker_pattern": "homogeneous",
+  "biomarker_gene": "ERBB2",
+  "sample_subtype": "unknown",
+  "subtype_mismatch_acknowledged": false,
+  "citations": [
+    "REF-005",
+    "REF-999"
+  ],
+  "dropped_cells_reported": 500,
+  "caveat": "Interpret with care.",
+  "abstention_reason": null,
+  "conclusion": "Immune-inflamed tumour with notable ERBB2 signal.",
+  "narrative": "Tumour-immune neighbourhood enrichment z = -3.87 suggests strong infiltration (REF-999). ERBB2 pattern p = 0.001."
+}

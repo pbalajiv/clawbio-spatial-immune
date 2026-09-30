@@ -1,0 +1,53 @@
+{
+  "all_pass": true,
+  "rows": [
+    {
+      "tissue": "inflamed_homogeneous",
+      "expected_immune_phenotype": "inflamed",
+      "expected_biomarker_pattern": "homogeneous",
+      "actual_immune_phenotype": "inflamed",
+      "actual_biomarker_pattern": "homogeneous",
+      "match": true
+    },
+    {
+      "tissue": "inflamed_heterogeneous",
+      "expected_immune_phenotype": "inflamed",
+      "expected_biomarker_pattern": "heterogeneous",
+      "actual_immune_phenotype": "inflamed",
+      "actual_biomarker_pattern": "heterogeneous",
+      "match": true
+    },
+    {
+      "tissue": "excluded_homogeneous",
+      "expected_immune_phenotype": "excluded",
+      "expected_biomarker_pattern": "homogeneous",
+      "actual_immune_phenotype": "excluded",
+      "actual_biomarker_pattern": "homogeneous",
+      "match": true
+    },
+    {
+      "tissue": "excluded_heterogeneous",
+      "expected_immune_phenotype": "excluded",
+      "expected_biomarker_pattern": "heterogeneous",
+      "actual_immune_phenotype": "excluded",
+      "actual_biomarker_pattern": "heterogeneous",
+      "match": true
+    },
+    {
+      "tissue": "desert_homogeneous",
+      "expected_immune_phenotype": "desert",
+      "expected_biomarker_pattern": "homogeneous",
+      "actual_immune_phenotype": "desert",
+      "actual_biomarker_pattern": "homogeneous",
+      "match": true
+    },
+    {
+      "tissue": "inflamed_homogeneous_lowqc",
+      "expected_immune_phenotype": "unclassifiable",
+      "expected_biomarker_pattern": "unclassifiable",
+      "actual_immune_phenotype": "unclassifiable",
+      "actual_biomarker_pattern": "unclassifiable",
+      "match": true
+    }
+  ]
+}

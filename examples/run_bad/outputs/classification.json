@@ -1,0 +1,28 @@
+{
+  "immune_phenotype": {
+    "label": "excluded",
+    "reason": null,
+    "nhood_z": -4.21,
+    "nhood_p": 0.001,
+    "t_cell_fraction": 0.083,
+    "infiltration_fraction": 0.012,
+    "infiltration_ratio": 0.108,
+    "n_permutations": 1000
+  },
+  "biomarker": {
+    "gene": "ERBB2",
+    "label": "heterogeneous",
+    "morans_i": 0.412,
+    "morans_p": 0.001,
+    "n_tumor_cells": 8123
+  },
+  "qc": {
+    "n_cells_input": 25000,
+    "n_cells_passed": 24312,
+    "n_dropped": 688,
+    "drop_reasons": {
+      "low_umi": 601,
+      "low_genes": 87
+    }
+  }
+}

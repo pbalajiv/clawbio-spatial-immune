@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "classification.schema.json",
+  "title": "Spatial immune phenotype + biomarker pattern classification (spec v1.0.0)",
+  "type": "object",
+  "required": ["schema_version", "spec_version", "seed", "config", "input", "qc", "cell_types",
+               "signature_concordance", "spillover_check", "immune_phenotype", "biomarker", "warnings"],
+  "additionalProperties": false,
+  "$defs": {
+    "num_or_null": {"type": ["number", "null"]},
+    "int_or_null": {"type": ["integer", "null"]},
+    "concordance": {
+      "type": "object",
+      "required": ["marker_loo_spearman", "median", "trusted"],
+      "properties": {
+        "marker_loo_spearman": {"type": "object", "additionalProperties": {"type": "number"}},
+        "median": {"type": "number"},
+        "trusted": {"type": "boolean"}
+      }
+    }
+  },
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "spec_version": {"const": "1.0.0"},
+    "seed": {"type": "integer"},
+    "config": {"type": "object", "description": "Full resolved config actually used (thresholds are part of the provenance)."},
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256", "format"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "format": {"type": "string"}
+      }
+    },
+    "qc": {
+      "type": "object",
+      "required": ["n_cells_input", "n_cells_passed", "n_dropped", "drop_reasons", "pass_fraction"],
+      "properties": {
+        "n_cells_input": {"type": "integer", "minimum": 0},
+        "n_cells_passed": {"type": "integer", "minimum": 0},
+        "n_dropped": {"type": "integer", "minimum": 0},
+        "drop_reasons": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "pass_fraction": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "cell_types": {
+      "type": "object",
+      "required": ["counts", "n_double_positive_tumor_t"],
+      "properties": {
+        "counts": {
+          "type": "object",
+          "required": ["tumor", "t_cell", "stroma", "ambiguous"],
+          "additionalProperties": {"type": "integer", "minimum": 0}
+        },
+        "n_double_positive_tumor_t": {"type": "integer", "minimum": 0}
+      }
+    },
+    "signature_concordance": {
+      "type": "object",
+      "required": ["tumor", "t_cell", "stroma"],
+      "additionalProperties": {"$ref": "#/$defs/concordance"}
+    },
+    "spillover_check": {
+      "type": "object",
+      "required": ["n_t_like_adjacent", "n_t_like_distant", "double_positive_rate_adjacent",
+                   "double_positive_rate_distant", "ratio"],
+      "properties": {
+        "n_t_like_adjacent": {"type": "integer"},
+        "n_t_like_distant": {"type": "integer"},
+        "double_positive_rate_adjacent": {"$ref": "#/$defs/num_or_null"},
+        "double_positive_rate_distant": {"$ref": "#/$defs/num_or_null"},
+        "ratio": {"$ref": "#/$defs/num_or_null"}
+      }
+    },
+    "immune_phenotype": {
+      "type": "object",
+      "required": ["label", "reason", "rule_path", "n_cells_passed", "n_tumor_cells", "n_t_cells",
+                   "t_cell_fraction", "n_tumor_region_cells", "infiltration_fraction",
+                   "infiltration_ratio", "nhood_z", "nhood_p", "n_permutations"],
+      "properties": {
+        "label": {"enum": ["inflamed", "excluded", "desert", "unclassifiable"]},
+        "reason": {"enum": [null, "qc_fail", "insufficient_tumor_cells", "tumor_signature_discordant",
+                            "insufficient_t_cells", "t_cell_signature_discordant", "no_tumor_region",
+                            "borderline"]},
+        "rule_path": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "n_cells_passed": {"type": "integer"},
+        "n_tumor_cells": {"type": "integer"},
+        "n_t_cells": {"type": "integer"},
+        "t_cell_fraction": {"type": "number", "minimum": 0, "maximum": 1},
+        "n_tumor_region_cells": {"$ref": "#/$defs/int_or_null"},
+        "infiltration_fraction": {"$ref": "#/$defs/num_or_null"},
+        "infiltration_ratio": {"$ref": "#/$defs/num_or_null"},
+        "nhood_z": {"$ref": "#/$defs/num_or_null"},
+        "nhood_p": {"$ref": "#/$defs/num_or_null"},
+        "n_permutations": {"type": "integer", "minimum": 1}
+      },
+      "allOf": [
+        {"if": {"properties": {"label": {"const": "unclassifiable"}}},
+         "then": {"properties": {"reason": {"type": "string"}}},
+         "else": {"properties": {"reason": {"const": null}}}}
+      ]
+    },
+    "biomarker": {
+      "type": "object",
+      "required": ["gene", "label", "reason", "rule_path", "n_tumor_cells", "detection_fraction",
+                   "morans_i", "morans_p", "morans_i_depth_control", "morans_i_excess", "n_permutations"],
+      "properties": {
+        "gene": {"type": "string"},
+        "label": {"enum": ["homogeneous", "heterogeneous", "unclassifiable"]},
+        "reason": {"enum": [null, "qc_fail", "insufficient_tumor_cells", "biomarker_not_expressed",
+                            "borderline"]},
+        "rule_path": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "n_tumor_cells": {"type": "integer"},
+        "detection_fraction": {"$ref": "#/$defs/num_or_null"},
+        "morans_i": {"$ref": "#/$defs/num_or_null"},
+        "morans_p": {"$ref": "#/$defs/num_or_null"},
+        "morans_i_depth_control": {"$ref": "#/$defs/num_or_null"},
+        "morans_i_excess": {"$ref": "#/$defs/num_or_null"},
+        "n_permutations": {"type": "integer", "minimum": 1}
+      },
+      "allOf": [
+        {"if": {"properties": {"label": {"const": "unclassifiable"}}},
+         "then": {"properties": {"reason": {"type": "string"}}},
+         "else": {"properties": {"reason": {"const": null}}}}
+      ]
+    },
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}

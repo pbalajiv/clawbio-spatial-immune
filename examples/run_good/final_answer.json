@@ -1,0 +1,16 @@
+{
+  "immune_phenotype": "excluded",
+  "biomarker_pattern": "heterogeneous",
+  "biomarker_gene": "ERBB2",
+  "sample_subtype": "HER2+",
+  "subtype_mismatch_acknowledged": false,
+  "citations": [
+    "REF-001",
+    "REF-004"
+  ],
+  "dropped_cells_reported": 688,
+  "caveat": "This is pattern classification of one tissue section against known categories. It is not a validated per-patient prediction of treatment response.",
+  "abstention_reason": null,
+  "conclusion": "Immune-excluded tumour with spatially heterogeneous ERBB2 expression.",
+  "narrative": "The section is classified as immune-excluded: tumour-immune neighbourhood enrichment z = -4.21 (p = 0.001, 1000 permutations); immune cells make up 8.3% of cells, of which 1.2% lie within tumour regions. ERBB2 is spatially heterogeneous among 8123 tumour cells (Moran's I = 0.412, p = 0.001). 688 of 25000 cells were removed at QC. The immune phenotype framework is described in REF-001; ERBB2 heterogeneity has been associated with lower pCR to HER2-targeted neoadjuvant therapy (REF-004)."
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "REF-001",
+    "verified": false,
+    "subtypes": ["any"],
+    "phenotypes": ["inflamed", "excluded", "desert"],
+    "citation": "Chen DS, Mellman I. Elements of cancer immunity and the cancer-immune set point. Nature. 2017;541(7637):321-330.",
+    "claim": "Defines the inflamed, excluded and desert spatial immune phenotype framework used by this project's classification rule; inflamed tumours are generally more likely to respond to PD-1/PD-L1 blockade."
+  },
+  {
+    "id": "REF-002",
+    "verified": false,
+    "subtypes": ["TNBC"],
+    "phenotypes": ["inflamed", "excluded"],
+    "citation": "Keren L, Bosse M, Marquez D, et al. A structured tumor-immune microenvironment in triple negative breast cancer revealed by multiplexed ion beam imaging. Cell. 2018;174(6):1373-1387.",
+    "claim": "Compartmentalised vs. mixed tumour-immune spatial architecture (a specific case of the inflamed/excluded distinction) is associated with survival differences in triple-negative breast cancer."
+  },
+  {
+    "id": "REF-003",
+    "verified": false,
+    "subtypes": ["TNBC", "HER2+"],
+    "phenotypes": ["inflamed", "desert"],
+    "citation": "Salgado R, Denkert C, Demaria S, et al. The evaluation of tumor-infiltrating lymphocytes (TILs) in breast cancer: recommendations by an International TILs Working Group 2014. Ann Oncol. 2015;26(2):259-271.",
+    "claim": "Standardised stromal TIL scoring methodology; higher TILs are associated with better prognosis and neoadjuvant response in TNBC and HER2+ disease."
+  },
+  {
+    "id": "REF-004",
+    "verified": false,
+    "subtypes": ["HER2+"],
+    "phenotypes": ["heterogeneous"],
+    "citation": "Metzger Filho O, Viale G, Trippa L, et al. Impact of HER2 heterogeneity on treatment response of early-stage HER2-positive breast cancer: phase II neoadjuvant clinical trial of T-DM1 combined with pertuzumab. Cancer Discov. 2021;11(10):2474-2487.",
+    "claim": "HER2 heterogeneity (by FISH/IHC) is associated with lower pathological complete response to neoadjuvant T-DM1 plus pertuzumab."
+  },
+  {
+    "id": "REF-005",
+    "verified": false,
+    "subtypes": ["DCIS"],
+    "phenotypes": ["excluded", "desert"],
+    "citation": "Kim M, Chung YR, Kim HJ, Woo JW, Ahn S, Park SY. Immune microenvironment in ductal carcinoma in situ: a comparison with invasive carcinoma of the breast. Breast Cancer Res. 2020;22:32.",
+    "claim": "CD4+, CD8+ and FOXP3+ tumour-infiltrating lymphocytes are significantly less abundant in pure DCIS than in invasive carcinoma, and leukocyte infiltration is concentrated at focal sites of myoepithelial disruption -- supporting this project's DCIS caveat that an 'excluded' T-cell spatial pattern in an in-situ lesion may partly reflect an intact anatomical (myoepithelial/basement-membrane) barrier rather than only a biological immune-evasion mechanism."
+  },
+  {
+    "id": "REF-006",
+    "verified": false,
+    "subtypes": ["HER2+"],
+    "phenotypes": ["heterogeneous"],
+    "citation": "Seol H, Lee HJ, Choi Y, Lee HE, Kim YJ, Kim JH, Kang E, Kim SW, Park SY. Intratumoral heterogeneity of HER2 gene amplification in breast cancer: its clinicopathological significance. Mod Pathol. 2012;25(7):938-948.",
+    "claim": "Establishes HER2 gene-amplification intratumoral heterogeneity as a distinct, clinically-relevant pathological finding in breast cancer, distinguishable from homogeneous HER2 amplification -- included for contrast when a run's ERBB2 pattern call is homogeneous rather than heterogeneous. Claim text needs confirming against the full paper (abstract only reviewed)."
+  }
+]

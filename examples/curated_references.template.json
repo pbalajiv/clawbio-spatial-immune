@@ -1,0 +1,55 @@
+[
+  {
+    "id": "REF-001",
+    "verified": false,
+    "subtypes": [
+      "any"
+    ],
+    "phenotypes": [
+      "inflamed",
+      "excluded",
+      "desert"
+    ],
+    "citation": "Chen DS, Mellman I. Elements of cancer immunity and the cancer-immune set point. Nature 2017.",
+    "claim": "Defines inflamed, excluded and desert immune phenotypes; inflamed tumours are generally more likely to respond to PD-1/PD-L1 blockade."
+  },
+  {
+    "id": "REF-002",
+    "verified": false,
+    "subtypes": [
+      "TNBC"
+    ],
+    "phenotypes": [
+      "inflamed",
+      "excluded"
+    ],
+    "citation": "Keren L et al. A structured tumor-immune microenvironment in triple negative breast cancer revealed by multiplexed ion beam imaging. Cell 2018.",
+    "claim": "Compartmentalised vs mixed tumour-immune architecture associated with survival in TNBC."
+  },
+  {
+    "id": "REF-003",
+    "verified": false,
+    "subtypes": [
+      "TNBC",
+      "HER2+"
+    ],
+    "phenotypes": [
+      "inflamed",
+      "desert"
+    ],
+    "citation": "Salgado R et al. The evaluation of tumor-infiltrating lymphocytes (TILs) in breast cancer: recommendations by an International TILs Working Group 2014. Ann Oncol 2015.",
+    "claim": "Standardised stromal TIL scoring; higher TILs associated with better prognosis and neoadjuvant response in TNBC and HER2+ disease."
+  },
+  {
+    "id": "REF-004",
+    "verified": false,
+    "subtypes": [
+      "HER2+"
+    ],
+    "phenotypes": [
+      "heterogeneous"
+    ],
+    "citation": "Filho OM et al. Impact of HER2 heterogeneity on treatment response of early-stage HER2-positive breast cancer: phase II neoadjuvant clinical trial of T-DM1 combined with pertuzumab. Cancer Discov 2021.",
+    "claim": "HER2 heterogeneity associated with lower pCR to neoadjuvant T-DM1 plus pertuzumab."
+  }
+]

@@ -1,0 +1,13 @@
+# Raw/large data: excluded, but keep the small provenance/decision docs and figures
+data/*
+!data/DATASET.md
+!data/real_data_config.json
+!data/CHECKSUMS.txt
+!data/qc_preflight.png
+
+synthetic/
+runs/
+qa_notes/
+*.h5ad
+__pycache__/
+.pytest_cache/

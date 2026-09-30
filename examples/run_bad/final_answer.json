@@ -1,0 +1,17 @@
+{
+  "immune_phenotype": "inflamed",
+  "biomarker_pattern": "heterogeneous",
+  "biomarker_gene": "ERBB2",
+  "sample_subtype": "HER2+",
+  "subtype_mismatch_acknowledged": false,
+  "citations": [
+    "REF-001",
+    "REF-002",
+    "REF-999"
+  ],
+  "dropped_cells_reported": 500,
+  "caveat": "Interpret with care.",
+  "abstention_reason": null,
+  "conclusion": "Immune-inflamed tumour with heterogeneous ERBB2.",
+  "narrative": "Tumour-immune enrichment z = -3.9 suggests infiltration (REF-002). ERBB2 heterogeneity p = 0.001 (REF-999)."
+}

@@ -1,0 +1,16 @@
+
+runs/t8_broken: FAIL  (9 fail, 3 warn)
+  [FAIL] label_faithfulness: final_answer.immune_phenotype='inflamed' but skill says 'excluded'
+  [WARN] label_consistency_in_text: conclusion mentions ['inflamed'] although label is 'excluded'
+  [FAIL] numeric_faithfulness: narrative: '-3.87' matches no skill output
+  [FAIL] paired_statistics: reported classification.immune_phenotype.nhood_p without classification.immune_phenotype.nhood_z
+  [FAIL] paired_statistics: reported classification.biomarker.morans_p without classification.biomarker.morans_i
+  [WARN] citation_verified: REF-005 is marked verified=false in the reference file
+  [WARN] citation_relevance: REF-005 covers ['excluded', 'desert'] but reported labels are ['homogeneous', 'inflamed']
+  [FAIL] subtype_match: REF-005 is from ['DCIS'], sample is 'unknown', mismatch not acknowledged
+  [FAIL] citation_grounding: REF-999 is not in the curated reference file
+  [FAIL] caveat: caveat missing terms ['not', 'validated', 'predict']
+  [FAIL] qc_reporting: final answer reports 500 dropped cells, skill says 3417
+  [FAIL] output_checksums: outputs/classification.json changed after the skill wrote it
+
+GATE: FAIL -- final_answer.json must NOT be shown to the user until fixed.
